@@ -1,0 +1,20 @@
+<h2>Create a todo list again!</h2><br>
+<form class="" action="/" method="post">
+  The title of your todo!<br>
+  <input type="text" name="title" value="" placeholder="title"><br>
+  <button type="submit" name="submit">Create todo!</button>
+</form>
+
+<hr>
+<h3>I need to complete these tasks</h3>
+{{#data}}
+{{title}}<br>
+<a href="/destroy/{{id}}">Delete</a><br>
+<!-- <a href="/viewtodo/{{id}}">Edit</a><br> -->
+
+
+<a href="/{{id}}">Edit</a><br>
+<br>
+{{/data}}
+<hr>
+<h3>Completed tasks</h3>
