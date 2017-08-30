@@ -8,13 +8,23 @@
 <hr>
 <h3>I need to complete these tasks</h3>
 {{#data}}
+{{^completedAt}}
+<form class="" action="/complete/{{id}}" method="post">
 {{title}}<br>
 <a href="/destroy/{{id}}">Delete</a><br>
 <!-- <a href="/viewtodo/{{id}}">Edit</a><br> -->
-
-
 <a href="/{{id}}">Edit</a><br>
+<button type="submit">Complete</button>
 <br>
+<br>
+</form>
+{{/completedAt}}
 {{/data}}
 <hr>
 <h3>Completed tasks</h3>
+
+{{#data}}
+{{#completedAt}}
+{{title}}<br>
+{{/completedAt}}
+{{/data}}

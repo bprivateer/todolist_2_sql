@@ -66,6 +66,22 @@ router.get('/:id', function(req, res){
 
 });
 
+router.post('/complete/:id', function(req, res){
+  models.todolist.update({
+    completedAt: true,
+  },{
+    where: {
+      id: req.params.id,
+    }
+  })
+  .then(function(){
+    res.redirect('/')
+  })
+  .catch(function(){
+    res.redirect('/')
+  })
+})
+
 
 
 
